@@ -1,9 +1,15 @@
+from allure_commons.types import Severity
 from selene import by, be
 from selene.support.shared import browser
 from selene.support.shared.jquery_style import s
 import allure
 
-def test_github_issue():
+allure.dynamic.tag('web')
+allure.dynamic.severity(Severity.CRITICAL)
+allure.dynamic.feature('Checking issue')
+allure.dynamic.story('Checking issue in repo')
+allure.dynamic.link('https://github.com', name='eroshenkoam')
+def test_steps_issue():
     with allure.step('Open browser'):
         browser.open('https://github.com')
 
